@@ -1,0 +1,27 @@
+.currencyCard {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.leftPart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--h-gap);
+}
+.currencyDetails {
+  display: flex;
+  gap: var(--v-gap);
+  align-items: center;
+}
+
+.currenyValue {
+  display: flex;
+  gap: var(--v-gap);
+}
+
+.change {
+  color: var(--green-color);
+}

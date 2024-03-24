@@ -1,0 +1,49 @@
+.marketCap {
+  padding-top: calc(var(--h-gap) * 2);
+  padding-bottom: calc(var(--h-gap) * 2);
+  padding-left: var(--h-gap);
+  padding-right: var(--h-gap);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--h-gap) * 2);
+}
+
+.marketCapUpper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.currencies {
+  display: flex;
+  justify-content: space-evenly;
+  overflow: scroll;
+  gap: var(--v-gap);
+}
+
+.headings {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--v-gap);
+}
+
+.icons {
+  display: flex;
+  gap: calc(var(--h-gap) * 2);
+}
+
+.icon {
+  display: flex;
+  gap: var(--v-gap);
+}
+
+@media (max-width: 767px) {
+  .caretDown {
+    display: none;
+  }
+  .iconTitle {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+.textInput {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: var(--border);
+}
+
+.textInput:focus {
+  outline: 1px solid var(--border-focus-color);
+}
