@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./CurrencyCard.module.css";
 import ReactApexChart from "react-apexcharts";
+
 function CurrencyCard() {
+  const [chartData, setChartData] = useState([100, 300, 50, 400, 200, 250]);
+
+  useEffect(() => {
+    // Simulate real-time data updates
+    const interval = setInterval(() => {
+      // Generate a new random data point
+      const newDataPoint = Math.floor(Math.random() * 500) + 100;
+      // Update the data array, keeping only the latest 6 data points
+      setChartData((prevData) => [...prevData.slice(-5), newDataPoint]);
+    }, 2000); // Update every 3 seconds
+
+    // Clear the interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
   const chartOptions = {
     // Define your chart options here
     chart: {
@@ -13,7 +29,7 @@ function CurrencyCard() {
     series: [
       {
         name: "Price",
-        data: [100, 300, 50, 400, 200, 250],
+        data: chartData,
       },
     ],
     xaxis: {
@@ -47,7 +63,11 @@ function CurrencyCard() {
     grid: {
       show: false,
     },
+    selection: {
+      enabled: true,
+    },
   };
+
   return (
     <div className={styles.currencyCard}>
       <div className={styles.leftPart}>
@@ -66,7 +86,6 @@ function CurrencyCard() {
       </div>
       <div className={styles.rightPart}>
         <ReactApexChart
-          // @ts-ignore
           options={chartOptions}
           series={chartOptions.series}
           type="line"

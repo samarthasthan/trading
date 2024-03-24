@@ -5,7 +5,7 @@ import Market from "../market/Market";
 
 function Home() {
   return (
-    <div className={styles.Portfolio}>
+    <div className={styles.Home}>
       <MainHeader></MainHeader>
       <Market></Market>
     </div>
