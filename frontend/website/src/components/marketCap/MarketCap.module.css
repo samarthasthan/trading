@@ -18,7 +18,10 @@
 .currencies {
   display: flex;
   justify-content: space-evenly;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: auto;
+  vertical-align: bottom;
+  scrollbar-width: none;
   gap: var(--v-gap);
 }
 
